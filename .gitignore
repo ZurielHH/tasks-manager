@@ -1,0 +1,23 @@
+# IDE's
+.idea/
+.vscode/
+.DS_STORE
+/coverage/
+
+# Composer
+/vendor
+
+# Data
+/var/data/
+
+# Doctrine proxies generados en producción
+/var/doctrine/proxies/*.php
+
+# PHP CS Fixer
+.php-cs-fixer.cache
+
+# PHP Unit
+.phpunit.result.cache
+
+# macOS
+.DS_Store
