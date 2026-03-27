@@ -11,9 +11,9 @@ REST API para gestionar tareas pendientes
 
 ```bash
 git clone <repositorio>
-cd tasks
+cd tasks-manager
 docker compose up -d
-ocker exec -it tasks_php composer i
+docker exec -it tasks_php composer i
 docker exec -it tasks_php php doctrine orm:schema-tool:create
 ```
 
