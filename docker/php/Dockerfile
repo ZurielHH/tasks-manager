@@ -20,8 +20,6 @@ WORKDIR /var/www/html
 
 COPY . /var/www/html
 
-RUN composer install
-
 RUN mkdir -p /var/www/html/data && \
     chown -R www-data:www-data /var/www/html && \
     chmod -R 755 /var/www/html/data
@@ -32,5 +30,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime \
     && echo $TZ > /etc/timezone
 
 RUN echo "date.timezone=America/Mexico_City" > /usr/local/etc/php/conf.d/timezone.ini
+
+RUN mkdir -p /var/www/html/var/data
 
 EXPOSE 9000
