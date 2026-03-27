@@ -39,8 +39,8 @@ final class TasksErrorHandler
                 ...$payload,
                 ...[
                     'type' => get_class($exception),
-                    'trace' => $exception->getTraceAsString()
-                ]
+                    'trace' => $exception->getTraceAsString(),
+                ],
             ];
         }
 
