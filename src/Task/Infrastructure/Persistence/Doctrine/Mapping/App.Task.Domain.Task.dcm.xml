@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
+                                      https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+
+    <entity name="App\Task\Domain\Task" table="tasks">
+        <id name="id" column="id" type="task_id">
+            <generator strategy="NONE" />
+        </id>
+
+        <field name="title" column="title" type="task_title" />
+        <field name="priority" column="priority" type="task_priority" />
+        <field name="completed" column="completed" type="boolean" />
+        <field name="description" column="description" type="task_description" nullable="true" />
+        <field name="dueDate" column="due_date" type="task_due_date" nullable="true" />
+
+        <embedded name="auditTimestamps"
+                  class="App\Shared\Domain\AuditTimestamps"
+                  use-column-prefix="false" />
+
+        <entity-listeners>
+            <entity-listener class="App\Shared\Infrastructure\Persistence\Doctrine\Listener\AuditTimestampsListener">
+                <lifecycle-callback type="prePersist" method="prePersist" />
+                <lifecycle-callback type="preUpdate" method="preUpdate" />
+            </entity-listener>
+        </entity-listeners>
+    </entity>
+</doctrine-mapping>
