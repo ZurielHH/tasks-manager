@@ -13,8 +13,6 @@ REST API para gestionar tareas pendientes
 git clone <repositorio>
 cd tasks-manager
 docker compose up -d
-docker exec -it tasks_php composer i
-docker exec -it tasks_php php doctrine orm:schema-tool:create
 ```
 
 La API estará disponible en `http://localhost:8080`.

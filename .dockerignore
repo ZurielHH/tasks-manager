@@ -1,0 +1,16 @@
+.git
+.gitignore
+.idea
+.DS_Store
+
+vendor
+var
+tests
+dev
+
+docker-compose.yml
+README.md
+LICENSE
+
+.php-cs-fixer.cache
+.phpunit.result.cache
